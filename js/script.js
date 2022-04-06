@@ -49,3 +49,18 @@ function calculateUntrainedFemale () {
   // output
   document.getElementById('untrainedFemale').innerHTML = 'You should bench press around: ' + benchpress + 'lbs'
 }
+
+/**
+ * This function calculates how much the person should bench press at the intermediate level (female).
+ */
+function calculateIntermediateFemale () {
+	// input
+  const weight = parseInt(document.getElementById('weight-of-female-intermediate').value)
+
+	// process
+	const untrained = 0.7894
+  const benchpress = (weight * untrained)
+
+  // output
+  document.getElementById('intermediateFemale').innerHTML = 'You should bench press around: ' + benchpress + 'lbs'
+}
