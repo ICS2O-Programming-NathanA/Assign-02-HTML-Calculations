@@ -1,76 +1,156 @@
 <!DOCTYPE html>
-<!-- Assign-01-HTML-CSS-JS -->
-<html lang="en-ca">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="My First Web Page, with JavaScript">
-    <meta name="keywords" content="immaculata, ics2o">
-    <meta name="author" content="Nathan student">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./css/style.css">
-		
-		<!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
-    <link rel="manifest" href="./fav/site.webmanifest">
-		
-		<!-- Google's MDL -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
- 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-indigo.min.css" /> 
-		<script defer src="https://code.getmdl.io/1.3.0/material.min.js">							</script>
-		<title>How much should you bench press?</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Area with JavaScript" />
+    <meta name="keywords" content="immaculata, ics2o" />
+    <meta name="author" content="Nathan Araujo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav_index/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav_index/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav_index/favicon-16x16.png" />
+    <link rel="manifest" href="./fav_index/site.webmanifest" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Area of a triangle, with JavaScript</title>
   </head>
-	<body>
-		<center><h2>Average bench press for men and women</h2></center>
-		<br></br>
-		<center><h5>Enter your Weight</h5></center>
+  <body>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js">		</script>
+    <script src="./js/script.js"></script>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Area with JS</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+              <center><h2>How much should a beginner bench press?</h2></center>
 
-    <!-- Numeric Textfield -->
-    <center><form action="#">
-      <div class="mdl-textfield mdl-js-textfield">
-        <input
-          class="mdl-textfield__input"
-          type="text"
-          pattern="-?[0-9]*(\.[0-9]+)?"
-          id="weight_of_person"
-          />
-            <label class="mdl-textfield__label" for="weight_of_person">weight ...</label>
+				<br></br>
+				<!-- Men -->
+				<center><h5>Men</h5></center>
+				<center><!-- Simple Textfield -->
+        <form action="#">
+          <p>Skill level Untrained</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="weight-of-male-untrained"
+            />
+            <label class="mdl-textfield__label" for="weight-of-male-untrained">weight ...</label>
             <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
         </form>
+				
+        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculateUntrainedMale()"
+        >
+          Calculate
+        </button>
+        <br />
+        <p>
+          <div id="answers">
+            <div id="untrainedMale"></div>
+          </div>
+        </p>
 
-	
-		<center><h5>Enter your skill level</h5></center>
+					
+				        <!-- Numeric Textfield -->
+        <form action="#">
+          <p>Skill level Intermediate</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="weight-of-male-intermediate"
+            />
+            <label class="mdl-textfield__label" for="weight-of-male-intermediate">weight ...</label>
+            <span class="mdl-textfield__error">Input is not a number!	</span>
+          </div>
+        </form>
+				        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculateIntermediateMale()"
+        >
+          Calculate
+        </button>
+        <br />
+        <p>
+          <div id="answers">
+            <div id="intermediateMale"></div>
+          </div>
+        </p>
 
-		<!-- Buttons for skill level -->
-		<center><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-		<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-		  <span class="mdl-radio__label">Untrained</span>
-		</label> <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-		<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-		  <span class="mdl-radio__label">Intermediate</span>
-		</label> <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-		<input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
-		<span class="mdl-radio__label">Elite</span> </label></center>
+					<br></br>
+				<!-- Women -->
+				<h5>Women</h5>
+				<!-- Simple Textfield -->
+        <form action="#">
+          <p>Skill level Untrained</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="weight-of-female-untrained"
+            />
+            <label class="mdl-textfield__label" for="weight-of-female-untrained">weight ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+				
+        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculateUntrainedFemale()"
+        >
+          Calculate
+        </button>
+        <br />
+        <p>
+          <div id="answers">
+            <div id="untrainedFemale"></div>
+          </div>
+        </p>
 
-		
-		<center><h5>Enter your Gender</h5></center>
-		
-		<!-- Accent-colored raised button with ripple -->
-		<center><button class="maleButton()">
-			  Male
-		</button>
-		<!-- Accent-colored raised button with ripple -->
-		<button class="womanButton()">
-			  Woman
-		</button></center>
-
-		<!-- Create a space where the user information will be displayed -->
-		<div id="display-results">
-    	<div id="weight"></div>
-			<div id="weight"></div>
-		</div>
-	</body>
+					
+				        <!-- Numeric Textfield -->
+        <form action="#">
+          <p>Skill level Intermediate</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="weight-of-female-intermediate"
+            />
+            <label class="mdl-textfield__label" for="weight-of-female-intermediate">weight ...</label>
+            <span class="mdl-textfield__error">Input is not a number!	</span>
+          </div>
+        </form>
+				        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculateIntermediateFemale()"
+        >
+          Calculate
+        </button>
+        <br />
+        <p>
+          <div id="answers">
+            <div id="intermediateMale"></div>
+          </div>
+        </p>
+				
+				</center>
+      </main>
+    </div>
+  </body>
 </html>
-    	
