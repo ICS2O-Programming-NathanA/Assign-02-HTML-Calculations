@@ -19,6 +19,9 @@ p {
 	background-color: #00ffbf;
 }
 
-image {
-
+img {
+	width: 400px;
+	height: 250px;
+	border: 6px solid #ffffff ;
+	border-radius: 25px;
 }
