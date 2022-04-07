@@ -15,9 +15,9 @@ function calculateUntrainedMale () {
 	// process
 	const untrained = 0.7456
   const benchpress = (weight * untrained)
-
+	
   // output
-  document.getElementById('untrainedMale').innerHTML = 'You should bench press around: ' + benchpress + 'lbs'
+  document.getElementById('untrainedMale').innerHTML = 'You should bench press around: ' + benchpress.toFixed(2) + 'lbs'
 }
 
 /**
@@ -32,7 +32,7 @@ function calculateIntermediateMale () {
   const benchpress = (weight * untrained)
 
   // output
-  document.getElementById('intermediateMale').innerHTML = 'You should bench press around: ' + benchpress + 'lbs'
+  document.getElementById('intermediateMale').innerHTML = 'You should bench press around: ' + benchpress.toFixed(2) + 'lbs'
 }
 
 /**
@@ -47,7 +47,7 @@ function calculateUntrainedFemale () {
   const benchpress = (weight * untrained)
 
   // output
-  document.getElementById('untrainedFemale').innerHTML = 'You should bench press around: ' + benchpress + 'lbs'
+  document.getElementById('untrainedFemale').innerHTML = 'You should bench press around: ' + benchpress.toFixed(2) + 'lbs'
 }
 
 /**
@@ -62,5 +62,5 @@ function calculateIntermediateFemale () {
   const benchpress = (weight * untrained)
 
   // output
-  document.getElementById('intermediateFemale').innerHTML = 'You should bench press around: ' + benchpress + 'lbs'
+  document.getElementById('intermediateFemale').innerHTML = 'You should bench press around: ' + benchpress.toFixed(2) + 'lbs'
 }
